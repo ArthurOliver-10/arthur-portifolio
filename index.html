@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Pokémon</title>
+
+<style>
+/* Reset básico para o box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0f1a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* FUNDO POKÉMON */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"), /* Pikachu */
+                      url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"),  /* Charmander */
+                      url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"),  /* Squirtle */
+                      url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png");  /* Bulbasaur */
+    
+    /* AJUSTE: Define uma posição diferente para cada Pokémon na tela */
+    background-position: top 10% left 5%,    /* Pikachu no topo esquerdo */
+                         top 10% right 5%,   /* Charmander no topo direito */
+                         bottom 10% left 5%,  /* Squirtle na parte inferior esquerda */
+                         bottom 10% right 5%; /* Bulbasaur na parte inferior direita */
+                         
+    background-size: 120px; /* Aumentado um pouco o tamanho para vê-los melhor */
+    background-repeat: no-repeat; /* Importante: impede que eles fiquem se multiplicando */
+    opacity: 0.15; /* Aumentei um pouquinho a visibilidade deles */
+    z-index: -1;
+}
+
+/* ABOUT */
+.about {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+    background: rgba(5, 15, 30, 0.92);
+    border-radius: 20px;
+    border: 1px solid rgba(77, 163, 255, 0.3);
+}
+
+/* Área do Perfil (Foto + Apresentação) */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #1e90ff;
+    object-fit: cover;
+    object-position: center 20%; /* AJUSTE: Centraliza o enquadramento no seu rosto */
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+    background-color: #0f2238; 
+    margin-bottom: 15px;
+}
+
+.profile-intro {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.profile-intro strong {
+    color: #4da3ff;
+}
+
+/* TITULO */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4da3ff;
+    margin-top: 10px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #1e90ff;
+    background: #0f2238;
+}
+
+/* LINKS */
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #4da3ff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* CAROUSEL */
+.carousel {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid #1e90ff;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.project {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 30px;
+    text-align: center;
+    background: rgba(15, 34, 56, 0.9);
+}
+
+.project h3 {
+    color: #4da3ff;
+}
+
+.project a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    background: #1e90ff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background: #4da3ff;
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="about">
+
+<div class="profile-container">
+    <img src="WIN_20260601_15_14_25_Pro.jpg" alt="Foto de Arthur" class="profile-pic">
+    <h1 class="profile-intro">Olá! Meu nome é <strong>Arthur</strong>.</h1>
+</div>
+
+<hr style="border: 0; border-top: 1px solid rgba(77, 163, 255, 0.2); margin-bottom: 30px;">
+
+<h2 class="section-title">👨‍💻 Sobre Mim</h2>
+
+<p style="text-align:center;">
+Olá! Meu nome é <strong>Arthur Oliver</strong> e sou estudante de
+<strong>Desenvolvimento de Sistemas</strong>.  
+Gosto de tecnologia, programação e Pokémon.
+</p>
+
+<div class="skills">
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Pokémon</div>
+<div class="skill">Tecnologia</div>
+</div>
+
+<div class="links">
+<a href="https://www.pokemon.com/br/" target="_blank">Pokémon Oficial</a>
+<a href="https://github.com/" target="_blank">GitHub</a>
+<a href="https://www.w3schools.com/" target="_blank">Aprender Web</a>
+</div>
+
+<h3 style="text-align:center; color:#4da3ff; margin-top:30px;">
+um carrosel meu
+</h3>
+
+<div class="carousel">
+<div class="carousel-track" id="track">
+
+<div class="project">
+<h3>🌐 Portfólio Pessoal</h3>
+<p>Meu primeiro site feito com HTML, CSS e JS.</p>
+<a href="#">Ver projeto</a>
+</div>
+
+<div class="project">
+<h3>🎮 Meus jogos</h3>
+<p>nas minhas horas vagas eu tento desenvolver jogos.</p>
+</div>
+
+<div class="project">
+<h3>💻 Site de Aprendizado</h3>
+<p>Experimentos de desenvolvimento web.</p>
+<a href="https://www.w3schools.com/" target="_blank">Aprender mais</a>
+</div>
+
+<div class="project">
+<h3>🚀 Projeto Futuro</h3>
+<p>Em desenvolvimento...</p>
+<a href="#">Em breve</a>
+</div>
+
+</div>
+</div>
+
+<div class="buttons">
+<button onclick="prev()">⬅</button>
+<button onclick="next()">➡</button>
+</div>
+
+</section>
+
+<script>
+let index = 0;
+const track = document.getElementById("track");
+const total = track.children.length;
+
+function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function next() {
+    index = (index + 1) % total;
+    update();
+}
+
+function prev() {
+    index = (index - 1 + total) % total;
+    update();
+}
+</script>
+
+</body>
+</html>
